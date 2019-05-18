@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: employee-consumer
+server:
+  port: 8001
+info:
+  app:
+    name: Spring Sample Application - Consumer
+    description: My Boot App
+    version: 1.0.0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8090/eureka
+    enabled: true
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+    status-page-url: http://${eureka.instance.hostname}:${server.port}/actuator/info
+    health-check-url-path: http://${eureka.instance.hostname}:${server.port}/actuator/health

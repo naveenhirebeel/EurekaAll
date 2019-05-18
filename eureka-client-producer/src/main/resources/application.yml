@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: employee-producer
+    
+#server:
+#  port: 7001
+server:
+  port: 7002
+  
+info:
+  app:
+    name: Producer - Instance 1
+    description: My Boot App
+    version: 1.0.0
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8090/eureka#,http://peer2:8091/eureka
+    enabled: true
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+    status-page-url: http://${eureka.instance.hostname}:${server.port}/actuator/info
+    health-check-url-path: http://${eureka.instance.hostname}:${server.port}/actuator/health
+    

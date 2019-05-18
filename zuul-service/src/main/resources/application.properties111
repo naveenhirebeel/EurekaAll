@@ -1,0 +1,4 @@
+#zuul.routes.producer.url=http://localhost:7001
+zuul.routes.producer.serviceId=employee-producer
+eureka.client.serviceUrl.defaultZone=http://localhost:8090/eureka
+server.port=9001
